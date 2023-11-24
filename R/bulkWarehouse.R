@@ -144,7 +144,7 @@ perm_test <- function(de_df=res.sal.lsd.pfilt, test_df=test_scz_asd_bp_Geschwind
 #' @importFrom Rcpp sourceCpp
 #' @examples
 #' ampSearch(short_strings=cell_barcodes_20000x_16bp, long_strings=amplicon_sequences_50000x_350bp, show_progres=True)
-ampSearch <- function(short_strins, long_strings, show_progress=False) {
+ampSearch <- function(short_strings, long_strings, show_progress=False) {
   .Call('_bulkWarehouse_ampSearch', PACKAGE = 'bulkWarehouse',
         short_strings = short_strings, 
         long_strings = long_strings, 
