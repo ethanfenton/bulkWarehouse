@@ -4,8 +4,9 @@ Title: What the Package Does (Title Case)
 Version: 0.2.7
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Useful functions for analyzing bulkRNAseq data as well as pseudobulk scRNAseq data
+    There are additional utilities for processing sequencing data in the context of neuroscience workflows such as
+    viral vector circuit tracing processed via selective amplification and read with amplicon sequeincing or other single-read chemistry
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
