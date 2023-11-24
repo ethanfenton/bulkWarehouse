@@ -131,3 +131,19 @@ perm_test <- function(de_df=res.sal.lsd.pfilt, test_df=test_scz_asd_bp_Geschwind
   return(list(plot = p, emp_pval = emp.pval))
 }
 
+#' ampSearch C++ Function
+#'
+#' This function finds matching sequences in two vectors of sequences. This was made for the purpose of finding primer and cell barcodes in amplicon sequencing data
+#'
+#' @param short_strings A CharacterVector of strings for which to search (e.g. cell barcodes)
+#' @param long_strings A CharacterVector of strings in which to search (e.g. amplicon seqeunces)
+#' @param show_progress A Bool determining if the percent progress should be output
+#' @return A 2D CharacterMatrix with a long_string in column1 and a matching short_string in column2, with one entry per column per row. A long string can have multiple short string matches (theoreticall) and a short string can have multiple long string matches (more likely scenario)
+#' @export
+#' @useDynLib bulkWarehouse
+#' @importFrom Rcpp sourceCpp
+#' @examples
+#' ampSearch(short_strings=cell_barcodes_20000x_16bp, long_strings=amplicon_sequences_50000x_350bp, show_progres=True)
+ampSearch <- function(short_strins, long_strings, show_progress=False) {
+  .Call('_bulkWarehouse_ampSearch', PACKAGE = 'bulkWarehouse', short_strings, long_strings, show_progress)
+}
